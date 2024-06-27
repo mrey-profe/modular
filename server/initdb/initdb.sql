@@ -40,7 +40,6 @@ id int(11) NOT NULL COMMENT 'Id del ciclo',
 nombre varchar(100) NOT NULL COMMENT 'nombre del ciclo'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_spanish_ci;
 
---
 -- Volcado de datos para la tabla ciclo
 INSERT INTO ciclo (id, nombre) VALUES
 (1, 'CS-DAW'),
@@ -48,8 +47,16 @@ INSERT INTO ciclo (id, nombre) VALUES
 (3, 'CB-IO'),
 (4, 'CM-SMR'),
 (5, 'CS-ASIR'),
-(6, 'CE-IABD'),
-(7, 'CE-CS');
+(6, 'CE-IABD(pres)'),
+(7, 'CE-IABD(dist)'),
+(8, 'CE-CS'),
+(9, 'ZS-DAW(dist)'),
+(10, 'ZS-DAM(dist)'),
+(11, 'ZS-DAM(pres)'),
+(12, 'ZM-SMR(dist)'),
+(13, 'ZS-ASIR(dist)'),
+(14, 'CS-DAW(dual)'),
+(15, 'Reducion');
 
 --
 -- Estructura de tabla para la tabla departamento
@@ -74,8 +81,8 @@ tipo varchar(100) NOT NULL COMMENT 'Tipo de la especialización'
 --
 -- Volcado de datos para la tabla especialidad
 INSERT INTO especialidad (id, tipo) VALUES
-(1, 'Programación'),
-(2, 'Sistemas');
+(1, 'Informatica'),
+(2, 'SAI');
 
 --
 -- Estructura de tabla para la tabla imparte
@@ -121,8 +128,8 @@ id_especialidad int(11) NOT NULL
 
 --
 -- Volcado de datos para la tabla modulo
-INSERT INTO modulo (id, nombre, id_departamento, id_tematica, id_especialidad) VALUES
-(1, 'DAW', 1, 1, 1);
+--INSERT INTO modulo (id, nombre, id_departamento, id_tematica, id_especialidad) VALUES
+--(1, 'DAW', 1, 1, 1);
 
 --
 -- Estructura de tabla para la tabla modulo_tematica
@@ -134,8 +141,8 @@ id_tematica int(11) NOT NULL
 
 --
 -- Volcado de datos para la tabla modulo_tematica
-INSERT INTO modulo_tematica (id, id_modulo, id_tematica) VALUES
-(1, 1, 1);
+--INSERT INTO modulo_tematica (id, id_modulo, id_tematica) VALUES
+--(1, 1, 1);
 
 --
 -- Estructura de tabla para la tabla profesor
@@ -203,7 +210,7 @@ id_departamento int(11) NOT NULL
 -- Volcado de datos para la tabla regimen
 INSERT INTO regimen (id, tipo, id_departamento) VALUES
 (1, 'Ordinario', 1),
-(2, 'Adulto', 1);
+(2, 'Adultos', 1);
 
 --
 -- Estructura de tabla para la tabla regimen_ciclo_modulo
@@ -217,8 +224,8 @@ horas_semanales int(11) NOT NULL COMMENT 'Número de horas que se imparten'
 
 --
 -- Volcado de datos para la tabla regimen_ciclo_modulo
-INSERT INTO regimen_ciclo_modulo (id, id_regimen, id_ciclo, id_modulo, horas_semanales) VALUES
-(6, 1, 1, 1, 5);
+--INSERT INTO regimen_ciclo_modulo (id, id_regimen, id_ciclo, id_modulo, horas_semanales) VALUES
+--(6, 1, 1, 1, 5);
 
 --
 -- Estructura de tabla para la tabla tematica
@@ -238,7 +245,14 @@ INSERT INTO tematica (id, color) VALUES
 (6, '#ffc0cb'),
 (7, '#f9b7ff'),
 (8, '#ffcba4'),
-(9, '#f9b7ff');
+(9, '#f9b7ff'),
+(10, '#D2691E'),
+(11, '#008B8B'),
+(12, '#8B0000'),
+(13, '#8FBC8F'),
+(14, '#DAA520'),
+(15, '#ADD8E6');
+
 
 --
 -- Índices para tablas volcadas
